@@ -1,0 +1,49 @@
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>폼 과제</title>
+<script>
+function game(obj) {
+var nexon_a = ["메이플스토리","천애명월도","바람의나라","마비노기","테라","메이플스토리2","테일즈위버","크리오브세이비어","어둠의전설","아스가르드","일랜시아","아르피엘","아키에이지","이카루스","파이널판타지14","아스텔리아"];
+var nexon_b = ["던전앤파이터","엘소드","마비노기영웅전","클로저스","크리티카","드레곤네스트"];
+var nexon_c = ["사이퍼즈","카오스온라인","하이퍼유니버스","탱고파이브:더 라스트 댄스","배틀라이트"];
+var nexon_d = ["서든어택","카운터스트라이크온라인","카운터스트라이크온라인2","TITANFALL ONLINE","로브레이커즈"];
+var nexon_e = ["카트라이더","크레이지아케이드","버블파이터","테일즈런너","로스트사가","마비노기듀얼"];
+var target = document.getElementById("namex");
+ if(obj.value == "a") var k = nexon_a;
+else if(obj.value == "b") var k = nexon_b;
+else if(obj.value == "c") var k = nexon_c;
+else if(obj.value == "d") var k = nexon_d;
+else if(obj.value == "e") var k = nexon_e;
+else if(obj.value == "e") var k = nexon_f;
+ 
+  target.options.length = 0;
+ 
+  for (x in k) {
+    var opt = document.createElement("option");
+    opt.value = k[x];
+    opt.innerHTML = k[x];
+    target.appendChild(opt);
+    }
+ }  
+ function nameif(frm){
+  document.getElementById("aa").innerHTML="선택한 게임의 종류는  " + frm.value + "입니다." ;
+ }
+    </script>
+</head>
+<body>
+<section>
+<fieldset>
+<legend>NEXON GAME</legend>
+<label for="gamex">TYPE</label>
+<select id="gamex" name="nexon" onchange="game(this)">
+<option value="a" selected="">RPG</option>
+<option value="b">ACTION RPG</option>
+<option value="c">AOS</option>
+<option value="d">FPS</option>
+<option value="e">CASUAL</option>
+<option value="f">SPORTS</option></select>
+<label for="name">NAME</label>
+<select id="namex" name="name" onchange="nameif(this)"></select>
+</fieldset>
+    <p id="aa"> </p>
+</section>
+</body></html>
